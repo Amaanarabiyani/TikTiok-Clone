@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:tiktok/constant.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,19 +10,68 @@ class HomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
+          Container(
             child: Text(
-              "Hello Doston",
+              "TikTok Clone",
               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.w900,
               ),
             ),
           ),
-          Center(
-            child: Icon(
-              Icons.handshake_outlined,
-              size: 100,
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: TextFormField(
+              decoration: InputDecoration(
+                hintText: "",
+                prefixIcon: Icon(Icons.email),
+                labelText: "Email",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: "",
+                prefixIcon: Icon(Icons.lock),
+                labelText: "Password",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: buttonColor,
+            ),
+            onPressed: () {
+              print("Button Pressed");
+            },
+            child: Text(
+              "Login",
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
         ],
